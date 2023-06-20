@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const Form = () => {
+  const router = useRouter()
   const [courseName, setCourseName] = useState("");
   const [date, setDate] = useState("");
   const [settlement, setSettlement] = useState("");
@@ -19,7 +21,9 @@ const Form = () => {
       form: form,
       description: comment,
     });
-
+    if (response.status === 200) {
+      router.push("/s");
+    }
     console.log("response", response);
   };
   return (

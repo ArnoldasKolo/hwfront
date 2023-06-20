@@ -32,7 +32,7 @@ const Homework = () => {
 
   const deleteHomework = async () => {
     const response = await axios.delete(
-      `http://localhost:8081/delete/${router.query.id}`
+      `https://homeworkbg.onrender.com/delete/${router.query.id}`
     );
 
     if (response.status === 200) {
