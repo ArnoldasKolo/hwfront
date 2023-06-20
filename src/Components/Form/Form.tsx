@@ -22,7 +22,7 @@ const Form = () => {
       description: comment,
     });
     if (response.status === 200) {
-      router.push("/s");
+      router.push("/");
     }
     console.log("response", response);
   };
