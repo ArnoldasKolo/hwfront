@@ -1,0 +1,85 @@
+.homework{
+    margin-top: 40px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Inter', sans-serif;
+    border-style: solid;
+    border-color:#4584FF ;
+    padding: 100px;
+
+}
+
+.courseSubject{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.line{
+    height: 6px;
+    background-color: #4584FF;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.homework p{
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.delete{
+    font-family: 'Inter', sans-serif;
+    background-color:#4584FF ;
+    border: none;
+    font-size: 15px;
+    padding: 5px 20px;
+    color:#F0FF48 ;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.deleteText{
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+
+@media (max-width: 750px) {
+    .homework{
+        padding: 50px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .courseSubject{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .line{
+        height: 6px;
+        background-color: #4584FF;
+        border: none;
+        margin-bottom: 30px;
+    }
+    
+    .homework p{
+        font-weight: 400;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .homework{
+        padding: 30px;
+    }
+  }  
