@@ -5,6 +5,7 @@ import Header from "@/Components/Header/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HwCard from "../Components/HwCard/HwCard"
+import Spinner from "@/Components/Spinner/Spinner";
 
 type HomeworkData = {
   courseSubject: string;
@@ -24,7 +25,7 @@ export default function Home({ homeworks}) {
 
   return (
     <>
-    
+      
       <Header />
       <div className={styles.container}>
       <div className={styles.cardsWrapper}>
@@ -42,6 +43,9 @@ export default function Home({ homeworks}) {
             />
           </div>
         ))}
+        {/*
+      // @ts-ignore */}
+        {!homework.length && <Spinner/>}
       </div>
       </div>
       

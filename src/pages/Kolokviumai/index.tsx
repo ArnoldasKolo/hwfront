@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import HwCard from "../../Components/HwCard/HwCard";
+import Spinner from "@/Components/Spinner/Spinner";
 
 type HomeworkData = {
   id: string;
@@ -46,6 +47,7 @@ const Kolokviumai = () => {
               />
             </div>
           ))}
+          {!homeworks.length && <Spinner/>}
         </div>
       </div>
     </>

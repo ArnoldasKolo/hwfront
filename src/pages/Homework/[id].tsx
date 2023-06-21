@@ -6,6 +6,7 @@ import Header from "@/Components/Header/Header";
 import Link from "next/link";
 import Image from "next/image";
 import arrow from "../../images/arrow-left 1.png"
+import Spinner from "@/Components/Spinner/Spinner";
 
 type HomeworkData = {
   courseSubject: string;
@@ -77,6 +78,9 @@ const Homework = () => {
             </div>
           </>
         )}
+        {/*
+      // @ts-ignore */}
+        {!homework.length && <Spinner/>}
       </div>
     </>
   );
