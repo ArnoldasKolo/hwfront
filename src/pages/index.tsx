@@ -13,22 +13,14 @@ type HomeworkData = {
   form: string;
   description: string;
 };
-
-export default function Home() {
+{/*
+      // @ts-ignore */}
+export default function Home({ homeworks}) {
    {/*
       // @ts-ignore */}
-  const [homeworks, setHomeworks] = useState<HomeworkData>([]);
+  const [homework, setHomeworks] = useState<HomeworkData>(homeworks);
 
-  const fetchAllHomeworks = async () => {
-    const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
-    const { data } = response;
-    console.log(data.homeworks);
-    setHomeworks(data.homeworks);
-  };
-
-  useEffect(() => {
-    fetchAllHomeworks();
-  }, []);
+  
 
   return (
     <>
@@ -38,7 +30,7 @@ export default function Home() {
       <div className={styles.cardsWrapper}>
          {/*
       // @ts-ignore */}
-        {homeworks.map((homework) => (
+        {homework.map((homework) => (
           <div key={homework.id}>
             <HwCard
               id={homework.id}
@@ -55,4 +47,18 @@ export default function Home() {
       
     </>
   );
+}
+
+{/*
+      // @ts-ignore */}
+export async function getServerSideProps(ctx) {
+  console.log(ctx.query.id);
+  try {
+    const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
+    const { data } = response;
+
+    return { props: { homeworks: data.homeworks } };
+  } catch (err) {
+    console.log(err);
+  }
 }
