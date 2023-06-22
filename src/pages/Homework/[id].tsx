@@ -80,7 +80,7 @@ const Homework = () => {
         )}
         {/*
       // @ts-ignore */}
-        {!homework.length && <Spinner/>}
+        {/* {!homework.length && <Spinner/>} */}
       </div>
     </>
   );
