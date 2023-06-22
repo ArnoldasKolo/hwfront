@@ -47,7 +47,7 @@ const Kolokviumai = () => {
               />
             </div>
           ))}
-          {!homeworks.length && <Spinner/>}
+
         </div>
       </div>
     </>
