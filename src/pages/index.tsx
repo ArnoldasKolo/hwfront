@@ -5,7 +5,7 @@ import Header from "@/Components/Header/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HwCard from "../Components/HwCard/HwCard"
-import Spinner from "@/Components/Spinner/Spinner";
+
 
 type HomeworkData = {
   courseSubject: string;
