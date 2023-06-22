@@ -54,14 +54,18 @@ export default function Home({ homeworks}) {
 
 {/*
       // @ts-ignore */}
-export async function getServerSideProps(ctx) {
-  console.log(ctx.query.id);
-  try {
-    const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
-    const { data } = response;
-
-    return { props: { homeworks: data.homeworks } };
-  } catch (err) {
-    console.log(err);
-  }
-}
+      export async function getServerSideProps(ctx) {
+        console.log(ctx.query.id);
+      
+        return new Promise(async (resolve, reject) => {
+          try {
+            const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
+            const { data } = response;
+      
+            resolve({ props: { homeworks: data.homeworks } });
+          } catch (err) {
+            console.log(err);
+            reject(err);
+          }
+        });
+      }
