@@ -45,7 +45,6 @@ export default function Home({ homeworks}) {
         ))}
         {/*
       // @ts-ignore */}
-        {!homework.length && <Spinner/>}
       </div>
       </div>
       

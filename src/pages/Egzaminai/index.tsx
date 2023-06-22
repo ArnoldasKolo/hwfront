@@ -48,7 +48,7 @@ const Egzaminai = () => {
             </div>
           ))}
           
-          {!homeworks.length  && <Spinner/>}
+
         </div>
       </div>
     </>

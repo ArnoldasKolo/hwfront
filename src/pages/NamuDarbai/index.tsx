@@ -47,7 +47,7 @@ const NamuDarbai = () => {
               />
             </div>
           ))}
-          {!homeworks.length && <Spinner/>}
+
         </div>
       </div>
     </>
