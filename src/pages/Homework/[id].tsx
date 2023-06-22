@@ -80,7 +80,8 @@ const Homework = () => {
         )}
         {/*
       // @ts-ignore */}
-        {/* {!homework.length && <Spinner/>} */}
+
+
       </div>
     </>
   );
