@@ -33,6 +33,9 @@ const Egzaminai = () => {
     <>
       <Header />
       <div className={styles.container}>
+      <div className={styles.upTextWrapper}>
+          <h3 className={styles.upText}>Egzaminai</h3>
+        </div>
         <div className={styles.cardsWrapper}>
           {filteredHomeworks.map((homework) => (
             <div key={homework.id}>
