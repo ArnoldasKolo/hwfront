@@ -2,9 +2,17 @@ import Link from "next/link";
 import React from "react";
 import styles from "./card.module.css";
 
- {/*
-      // @ts-ignore */}
-const HwCard = ({id,courseSubject,endDate,settlement,form,description,}) => {
+type HwCardProps = {
+  id: string;
+  courseSubject: string;
+  endDate: string;
+  settlement: string;
+  form: string;
+  description: string;
+};
+
+
+const HwCard: React.FC<HwCardProps> = ({id,courseSubject,endDate,settlement,form,description,}) => {
   return (
     <>
       <Link
@@ -12,7 +20,7 @@ const HwCard = ({id,courseSubject,endDate,settlement,form,description,}) => {
         href={`Homework/${id}`}
       >
         <div className={styles.homework}>
-          <h1 className={styles.courseSubject}>{courseSubject}</h1>
+         <div className={styles.courseSubjectWrapper}> <h1 className={styles.courseSubject}>{courseSubject}</h1></div>
           <hr className={styles.line} />
           <p className={styles.endDate} >Atsiskaitymo data : {endDate}</p>
           <p className={styles.settlement} >Atsiskaitymas : {settlement}</p>

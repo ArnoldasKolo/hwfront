@@ -27,8 +27,12 @@ const DekstopMenu = () => {
     </>
   );
 };
-/*// @ts-ignore */
-const MobileNav = (props) => {
+
+
+type MobileNavProps = {
+  active: boolean;
+};
+const MobileNav:React.FC<MobileNavProps> = (props) => {
 
   console.log(props.active)
   return (

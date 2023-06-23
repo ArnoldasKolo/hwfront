@@ -7,10 +7,10 @@ import Form from "@/Components/Form/Form";
 const Ikelti = () => {
 
   return (
-    <>
+    <div className={styles.Ikelti}>
       <Header />
       <Form/>
-    </>
+    </div>
   );
 };
 

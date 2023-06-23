@@ -10,9 +10,16 @@
     font-family: 'Inter', sans-serif;
     border-style: solid;
     border-color:#4584FF ;
+    border-radius: 30px;
     padding:20px ;
     
     
+}
+
+.courseSubjectWrapper{
+    background-color: #4584FF;
+    width: max-content;
+    border-radius: 60px;
 }
 
 .courseSubject{
@@ -21,6 +28,8 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 15px;
+    color: white;
+    padding: 10px 15px;
 }
 
 .line{

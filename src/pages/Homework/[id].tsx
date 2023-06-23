@@ -56,7 +56,7 @@ const Homework = () => {
           <>
             <div className={styles.homework}>
               
-              <h1 className={styles.courseSubject}>{homework.courseSubject}</h1>
+              <div className={styles.courseSubjectWrapper}> <h1 className={styles.courseSubject}>{homework.courseSubject}</h1></div>
               <hr className={styles.line} />
               <p className={styles.endDate}>
                 Atsiskaitymo data : {homework.endDate}
@@ -77,9 +77,6 @@ const Homework = () => {
             </div>
           </>
         )}
-        {/*
-      // @ts-ignore */}
-
 
       </div>
     </>

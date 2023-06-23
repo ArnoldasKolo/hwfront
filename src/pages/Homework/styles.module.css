@@ -7,8 +7,16 @@
     border-style: solid;
     border-color:#4584FF ;
     padding: 100px;
+    border-radius: 20px;
 
 }
+
+.courseSubjectWrapper{
+    background-color: #4584FF;
+    width: max-content;
+    border-radius: 40px;
+}
+
 
 .courseSubject{
     font-style: normal;
@@ -16,6 +24,8 @@
     font-size: 40px;
     line-height: 24px;
     margin-bottom: 30px;
+    color: white;
+    padding: 15px 30px;
 }
 
 .line{
@@ -40,6 +50,7 @@
     color:#F0FF48 ;
     font-weight: 700;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 .deleteText{
@@ -62,6 +73,7 @@
         font-size: 30px;
         line-height: 24px;
         margin-bottom: 30px;
+        padding: 10px 15px;
     }
     
     .line{

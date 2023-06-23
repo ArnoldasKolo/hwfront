@@ -11,8 +11,6 @@ const Form = () => {
   const [form, setForm] = useState("");
   const [comment, setComment] = useState("");
 
-  /* @ts-ignore */
-
   const createHomework = async () => {
     const response = await axios.post("https://homeworkbg.onrender.com/homework", {
       courseSubject: courseName,
@@ -31,7 +29,7 @@ const Form = () => {
       <div className={styles.container}>
         <div className={styles.form}>
           <input
-            className={styles.courseName}
+            className={styles.input}
             type="text"
             placeholder="Kurso dalykas"
             value={courseName}
@@ -39,17 +37,17 @@ const Form = () => {
           />
           <input
             type="date"
-            className={styles.courseDate}
+            className={styles.input}
             value={date}
             onChange={(event) => setDate(event.target.value)}
           />
-          <select id="atsiskaitymas"  onChange={(event) => setSettlement(event.target.value)}  className={styles.atsiskaitymasSelect}>
+          <select id="atsiskaitymas"  onChange={(event) => setSettlement(event.target.value)}  className={styles.input}>
             <option  value="" >Pasirinkti atsiskaitymą</option>
             <option value="Egzaminas">Egzaminas</option>
             <option value="Kolokviumas">Kolokviumas</option>
             <option value="Namų darbai">Namų darbai</option>
           </select>
-          <select id="budas" onChange={(event) => setForm(event.target.value)}  className={styles.budasSelect}>
+          <select id="budas" onChange={(event) => setForm(event.target.value)}  className={styles.input}>
             <option value="">Pasirinkti Būdą</option>
             <option value="Įkelti į moodle">Ikelti i moodle</option>
             <option value="Auditorijoje">Auditorijoje</option>

@@ -1,71 +1,66 @@
-
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Header from "@/Components/Header/Header";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import HwCard from "../Components/HwCard/HwCard"
-
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import HwCard from '../Components/HwCard/HwCard';
+import Header from '../Components/Header/Header';
+import styles from '../styles/Home.module.css';
 
 type HomeworkData = {
+  id: string;
   courseSubject: string;
   endDate: string;
   settlement: string;
   form: string;
   description: string;
 };
-{/*
-      // @ts-ignore */}
-export default function Home({ homeworks}) {
-   {/*
-      // @ts-ignore */}
-  const [homework, setHomeworks] = useState<HomeworkData>(homeworks);
 
-  
+type HomeProps = {
+  homeworks: HomeworkData[];
+};
+
+export default function Home({ homeworks }: HomeProps) {
+  const [homeworkList, setHomeworkList] = useState<HomeworkData[]>(homeworks);
 
   return (
     <>
-      
       <Header />
       <div className={styles.container}>
-      <div className={styles.cardsWrapper}>
-         {/*
-      // @ts-ignore */}
-        {homework.map((homework) => (
-          <div key={homework.id}>
-            <HwCard
-              id={homework.id}
-              courseSubject={homework.courseSubject}
-              endDate={homework.endDate}
-              settlement={homework.settlement}
-              form={homework.form}
-              description={homework.description}
-            />
-          </div>
-        ))}
-        {/*
-      // @ts-ignore */}
+        <div className={styles.upTextWrapper}>
+          <h3 className={styles.upText}>Visi Atsiskaitymai</h3>
+        </div>
+        <div className={styles.cardsWrapper}>
+          {homeworkList.map((homework) => (
+            <div key={homework.id}>
+              <HwCard
+                id={homework.id}
+                courseSubject={homework.courseSubject}
+                endDate={homework.endDate}
+                settlement={homework.settlement}
+                form={homework.form}
+                description={homework.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      </div>
-      
     </>
   );
 }
 
-{/*
-      // @ts-ignore */}
-      export async function getServerSideProps(ctx) {
-        console.log(ctx.query.id);
-      
-        return new Promise(async (resolve, reject) => {
-          try {
-            const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
-            const { data } = response;
-      
-            resolve({ props: { homeworks: data.homeworks } });
-          } catch (err) {
-            console.log(err);
-            reject(err);
-          }
-        });
-      }
+export async function getServerSideProps() {
+  try {
+    const response = await axios.get('https://homeworkbg.onrender.com/homeworks');
+    const { data } = response;
+    return {
+      props: {
+        homeworks: data.homeworks,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        homeworks: [],
+      },
+    };
+  }
+}
