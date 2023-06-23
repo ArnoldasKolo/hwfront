@@ -12,7 +12,7 @@ const Form = () => {
   const [comment, setComment] = useState("");
 
   const createHomework = async () => {
-    const response = await axios.post("https://homeworkbg.onrender.com/homework", {
+    const response = await axios.post("https://homeworkbg.adaptable.app/homework", {
       courseSubject: courseName,
       endDate: date,
       settlement: settlement,

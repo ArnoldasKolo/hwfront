@@ -17,7 +17,7 @@ const NamuDarbai = () => {
   const [homeworks, setHomeworks] = useState<HomeworkData[]>([]);
 
   const fetchAllHomeworks = async () => {
-    const response = await axios.get("https://homeworkbg.onrender.com/homeworks");
+    const response = await axios.get("https://homeworkbg.adaptable.app/homeworks");
     const { data } = response;
     console.log(data.homeworks);
     setHomeworks(data.homeworks);

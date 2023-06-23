@@ -48,7 +48,7 @@ export default function Home({ homeworks }: HomeProps) {
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get('https://homeworkbg.onrender.com/homeworks');
+    const response = await axios.get('https://homeworkbg.adaptable.app/homeworks');
     const { data } = response;
     return {
       props: {

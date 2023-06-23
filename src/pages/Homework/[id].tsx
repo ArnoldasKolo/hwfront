@@ -22,7 +22,7 @@ const Homework = () => {
   const fetchHomework = async () => {
     console.log(router.query.id);
     const response = await axios.get(
-      `https://homeworkbg.onrender.com/homework/${router.query.id}`
+      `https://homeworkbg.adaptable.app/homework/${router.query.id}`
     );
 
     const data = response.data.response[0];
@@ -32,7 +32,7 @@ const Homework = () => {
 
   const deleteHomework = async () => {
     const response = await axios.delete(
-      `https://homeworkbg.onrender.com/delete/${router.query.id}`
+      `https://homeworkbg.adaptable.app/delete/${router.query.id}`
     );
 
     if (response.status === 200) {
